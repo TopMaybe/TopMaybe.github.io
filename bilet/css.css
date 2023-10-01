@@ -1,0 +1,26 @@
+button {
+  background-color: #00D700; /* Зеленый цвет фона */
+  border: none; /* Убрать границу кнопки */
+  width: 400px;
+  height: 50px;
+  color: white; /* Белый цвет текста */
+  text-align: center; /* Центрирование текста */
+  text-decoration: none; /* Убрать подчеркивание текста */
+  display: inline-block; /* Сделать кнопку блочным элементом */
+  font-size: 16px; /* Размер текста кнопки */
+  margin: 4px 2px; /* Внешние отступы кнопки */
+  cursor: pointer; /* Изменить форму курсора при наведении на кнопку */
+  border-radius: 3px; /* Закругленные углы кнопки */
+}
+.buttonAnswer{
+	background-color: #00D700;
+    display: inline-block;
+	width: 400px;
+    height: 40px;
+    color: white;
+    padding: 15px 32px;
+    user-select: none;
+}
+.buttonAnswer:hover {
+  background-color: #ddd;
+}
