@@ -1,16 +1,69 @@
+
+.text{
+  font-size: 16px;
+  text-align: justify-all;
+}
+
+.question{
+  width: 400px;
+  height: 40px;
+  margin-left: 2px;
+  margin-bottom: 12px;
+  display: block;
+  border: 1px solid black;
+  border-radius: 2px;
+  /*user-select: none;*/
+  text-align: center;
+  vertical-align: center;
+}
+
 button {
-  background-color: #00D700;/* Зеленый цвет фона */
+  background-color: #ddd;   /* Зеленый цвет фона */
   border: none; 			/* Убрать границу кнопки */
   width: 400px;
-  height: 54px;
-/*  color: white; 			/* Белый цвет текста */
-  text-align: center; 		/* Центрирование текста */
-  display: inline-block; 	/* Сделать кнопку блочным элементом */
-  font-size: 16px; 			/* Размер текста кнопки */
-  margin: 4px 2px; 			/* Внешние отступы кнопки */
+  height: 16px;
+  display: block; 	        /* Сделать кнопку блочным элементом */
+  margin-left: 2px;
+  margin-bottom: 2px;
   cursor: pointer; 			/* Изменить форму курсора при наведении на кнопку */
-  border-radius: 7px; 		/* Закругленные углы кнопки */
+  border-radius: 4px; 		/* Закругленные углы кнопки */
+  text-align: center; 		/* Центрирование текста */
+  vertical-align: center;
+  font-size: 12px; 			/* Размер текста кнопки */
 }
 button:hover{
-	background-color: #ddd;
+  background-color: #6d6d6d;
 }
+
+
+/*.bs-example > .btn,*/
+/*.bs-example > .btn-group {*/
+/*  margin-top: 5px;*/
+/*  margin-bottom: 5px;*/
+/*}*/
+/*.myconf-button{*/
+/*  padding-left: 0px;*/
+/*  padding-bottom: 0px;*/
+/*  padding-top: 0px;*/
+
+/*  !*padding-right: 5px;*!*/
+/*  font-size: 30px;*/
+/*}*/
+/*button.list-group-item.active, button.list-group-item.active:hover, button.list-group-item.active:focus {*/
+/*  z-index: 2;*/
+/*  color: #fff;*/
+/*  background-color: #428bca;*/
+/*  border-color: #428bca;*/
+/*}*/
+/*#buttonPanel.btn-group-sm > button , #buttonPanel1 > button, #buttonPanel2 > button, #buttonPanel3 > button , #buttonPanel4 > button {*/
+/*  width: 35px;*/
+/*  height: 30px;*/
+/*  padding: 5px 0px !important;*/
+/*  margin-bottom: 5px !important;*/
+/*}*/
+/*.current-button{*/
+/*  !*border-top: 4px solid gold ;*!*/
+/*  color: #333;*/
+/*  background-color: #e6e6e6;*/
+/*  border-color: #adadad;*/
+/*}*/
