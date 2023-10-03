@@ -8,14 +8,14 @@ const questions = [
 
 let currentQuestion = 0
 let currentRightAnswer = 0
-let ButtonID = "answer-item"
+let QuestionBtnID = "btn_"
+let AnswerBtnID = "answer-item"
 
 
 
-
-function SetListener() {
+function SetListenerToAnswer() {
     for (let i = 1; i < questions[currentQuestion].length; i++) {
-        let button = document.getElementById(`${ButtonID+i}`);
+        let button = document.getElementById(`${AnswerBtnID+i}`);
         if(questions[currentQuestion][i].includes("+")) currentRightAnswer = i;
         button.innerText = `${questions[currentQuestion][i].replace("+", "")}`;
         button.addEventListener("click", function () {
@@ -25,16 +25,33 @@ function SetListener() {
     }
     UpdateText();
 }
-
+function SetListenerToQuestion(){
+    for (let i = 0; i < 20; i++) {
+        let button = document.getElementById(`${QuestionBtnID+i}`);
+        button.innerText = `${i+1}`;
+        button.addEventListener("click", function () {
+            GoToQuestion(i)
+        });
+        // console.log(`${currentRightAnswer}\n${questions[currentQuestion][i]}`)
+    }
+}
 function UpdateText(){
-    if (currentQuestion>2) currentQuestion = 0
+    if (currentQuestion>20) CheckAnswers()
     document.getElementById("question").innerHTML = `${questions[currentQuestion][0]}`
     currentQuestion++
 }
 function SetAnswer(idAnswer){
-    document.getElementById(`${ButtonID+idAnswer}`).style.backgroundColor = "red";
-    if (idAnswer === currentRightAnswer) document.getElementById(`${ButtonID+idAnswer}`).style.backgroundColor = '#30ff23';
+    document.getElementById(`${AnswerBtnID+idAnswer}`).style.backgroundColor = "red";
+    if (idAnswer === currentRightAnswer) document.getElementById(`${AnswerBtnID+idAnswer}`).style.backgroundColor = '#30ff23';
+}
+function GoToQuestion(id){
+    //TODO:
+    console.log(`Сдесь могла быть ваша реклама\n${id}`)
+}
+function CheckAnswers(){
+    //TODO:
+    console.log("Тут должна быть проверка ошибок")
 }
 
-
-SetListener()
+SetListenerToAnswer()
+SetListenerToQuestion()
