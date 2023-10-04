@@ -1,112 +1,68 @@
-
+body{
+  background-color: #ffffff;
+  margin: 10px;
+  max-width: 750px;
+  /*user-select: none;*/
+}
 .text{
   font-size: 16px;
   text-align: justify-all;
 }
-
+.image-question{
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin-bottom: 12px;
+  border: 1px solid black;
+}
 .question{
-  width: 400px;
+  width: 100%;
   height: 40px;
-  margin-left: 2px;
   margin-bottom: 12px;
   display: block;
   border: 1px solid black;
   border-radius: 2px;
-  /*user-select: none;*/
   text-align: center;
   vertical-align: center;
 }
-
-/*button {*/
-/*  background-color: #ddd;   !* Зеленый цвет фона *!*/
-/*  border: none; 			!* Убрать границу кнопки *!*/
-/*  width: 400px;*/
-/*  height: 16px;*/
-/*  display: block; 	        !* Сделать кнопку блочным элементом *!*/
-/*  margin-left: 2px;*/
-/*  margin-bottom: 2px;*/
-/*  cursor: pointer; 			!* Изменить форму курсора при наведении на кнопку *!*/
-/*  border-radius: 4px; 		!* Закругленные углы кнопки *!*/
-/*  text-align: center; 		!* Центрирование текста *!*/
-/*  vertical-align: center;*/
-/*  font-size: 12px; 			!* Размер текста кнопки *!*/
-/*}*/
-/*button:hover{*/
-/*  background-color: #6d6d6d;*/
-/*}*/
 .custom-button{
   background-color: #ddd;
-  width: 400px;
+  width: 100%;
   height: 16px;
-  margin-left: 2px;
   margin-bottom: 2px;
   border: none;
-  border-radius: 4px; 		/* Закругленные углы кнопки */
-  text-align: center; 		/* Центрирование текста */
+  border-radius: 4px;
+  text-align: center;
   vertical-align: center;
-  font-size: 12px; 			/* Размер текста кнопки */
+  font-size: 12px;
   cursor: pointer;
   user-select: none;
 }
 .custom-button:hover{
   background-color: #6d6d6d;
 }
-
 .currentQuestion-btn{
-  background-color: #ddd;   /* Зеленый цвет фона */
-  border: none; 			/* Убрать границу кнопки */
-  width: 19px;
-  height: 19px;
-  display: inline-block; 	        /* Сделать кнопку блочным элементом */
-  margin-left: 2px;
-  margin-bottom: 2px;
-  cursor: pointer; 			/* Изменить форму курсора при наведении на кнопку */
-  border-radius: 4px; 		/* Закругленные углы кнопки */
-  text-align: center; 		/* Центрирование текста */
+  background-color: #ececec;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
   vertical-align: central;
-  font-size: 12px; 			/* Размер текста кнопки */
+  font-size: 18px;
   user-select: none;
 }
 .currentQuestion-btn:hover{
   background-color: #6d6d6d;
 }
-
+.hide-btn{
+  display: none;
+}
 .btn-group{
   display: flex;
+  width: 100%;
   flex-direction: row;
+  justify-content: space-between;
 }
-
-/*.bs-example > .btn,*/
-/*.bs-example > .btn-group {*/
-/*  margin-top: 5px;*/
-/*  margin-bottom: 5px;*/
-/*}*/
-
-/*.myconf-button{*/
-/*  padding-left: 0px;*/
-/*  padding-bottom: 0px;*/
-/*  padding-top: 0px;*/
-/*  !*padding-right: 5px;*!*/
-/*  font-size: 30px;*/
-/*}*/
-
-/*button.list-group-item.active, button.list-group-item.active:hover, button.list-group-item.active:focus {*/
-/*  z-index: 2;*/
-/*  color: #fff;*/
-/*  background-color: #428bca;*/
-/*  border-color: #428bca;*/
-/*}*/
-
-/*#buttonPanel.btn-group-sm > button , #buttonPanel > button, #buttonPanel2 > button, #buttonPanel3 > button , #buttonPanel4 > button {*/
-/*  width: 35px;*/
-/*  height: 30px;*/
-/*  padding: 5px 0px !important;*/
-/*  margin-bottom: 5px !important;*/
-/*}*/
-
-/*.current-button{*/
-/*  !*border-top: 4px solid gold ;*!*/
-/*  color: #333;*/
-/*  background-color: #e6e6e6;*/
-/*  border-color: #adadad;*/
-/*}*/

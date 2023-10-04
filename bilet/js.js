@@ -10,21 +10,38 @@ let currentQuestion = 0
 let currentRightAnswer = 0
 let QuestionBtnID = "btn_"
 let AnswerBtnID = "answer-item"
+let btn = [];
 
-
-
-function SetListenerToAnswer() {
-    for (let i = 1; i < questions[currentQuestion].length; i++) {
-        let button = document.getElementById(`${AnswerBtnID+i}`);
-        if(questions[currentQuestion][i].includes("+")) currentRightAnswer = i;
-        button.innerText = `${questions[currentQuestion][i].replace("+", "")}`;
-        button.addEventListener("click", function () {
-            SetAnswer(i)
-        });
-        // console.log(`${currentRightAnswer}\n${questions[currentQuestion][i]}`)
-    }
-    UpdateText();
+function SetListenerToAnswer(index) {
+    document.getElementById(`${AnswerBtnID+index}`).addEventListener("click", function () {
+        SetAnswer(index)
+    });
 }
+function SetTextInBtn(index){
+    if (questions[currentQuestion][index].includes("+")) currentRightAnswer = index;
+    document.getElementById(`${AnswerBtnID + index}`).innerText = `${questions[currentQuestion][index].replace("+", "")}`;
+}
+function ClearColorBtn(){
+    //TODO:
+    for(let i = 1; i < questions[currentQuestion].length; i++){
+        btn[i-1].style.backgroundColor = "#ddd"
+    }
+}
+function SetImage(index){
+    let img = document.getElementById("image");
+    fetch(`./img/n17_${index+1}.jpg`)
+        .then(response => {
+            img.src = response.ok ? `./img/n17_${index+1}.jpg` : "./img/no_picture.png";
+        });
+}
+function SetUpButtons(){
+    for (let i = 1; i < questions[currentQuestion].length; i++){
+        btn[i-1] = document.getElementById(`${AnswerBtnID+i}`)
+        SetListenerToAnswer(i)
+        SetTextInBtn(i)
+    }
+}
+
 function SetListenerToQuestion(){
     for (let i = 0; i < 20; i++) {
         let button = document.getElementById(`${QuestionBtnID+i}`);
@@ -32,26 +49,32 @@ function SetListenerToQuestion(){
         button.addEventListener("click", function () {
             GoToQuestion(i)
         });
-        // console.log(`${currentRightAnswer}\n${questions[currentQuestion][i]}`)
     }
 }
 function UpdateText(){
-    if (currentQuestion>20) CheckAnswers()
     document.getElementById("question").innerHTML = `${questions[currentQuestion][0]}`
-    currentQuestion++
 }
 function SetAnswer(idAnswer){
     document.getElementById(`${AnswerBtnID+idAnswer}`).style.backgroundColor = "red";
     if (idAnswer === currentRightAnswer) document.getElementById(`${AnswerBtnID+idAnswer}`).style.backgroundColor = '#30ff23';
 }
 function GoToQuestion(id){
-    //TODO:
-    console.log(`Сдесь могла быть ваша реклама\n${id}`)
+    currentQuestion = id
+    UpdateText()
+    ClearColorBtn()
+    SetImage(currentQuestion)
+    for (let i = questions[currentQuestion].length;  i < 6; i++)
+    {
+        btn[i] = document.getElementById(`${AnswerBtnID+i}`)
+        btn[i].classList.add("hide-btn")
+    }
 }
 function CheckAnswers(){
     //TODO:
-    console.log("Тут должна быть проверка ошибок")
+    // Тут должна быть проверка ошибок в ответах
 }
 
-SetListenerToAnswer()
+
 SetListenerToQuestion()
+SetUpButtons()
+GoToQuestion(currentQuestion)
