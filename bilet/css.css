@@ -4,10 +4,6 @@ body{
   max-width: 750px;
   /*user-select: none;*/
 }
-.text{
-  font-size: 16px;
-  text-align: justify-all;
-}
 .image-question{
   width: 100%;
   height: 100%;
@@ -17,24 +13,28 @@ body{
 }
 .question{
   width: 100%;
-  height: 40px;
+  min-height: 40px;
+  max-height: 400px;
   margin-bottom: 12px;
-  display: block;
+  display: inline-block;
   border: 1px solid black;
   border-radius: 2px;
+}
+.text{
+  font-weight: bold;
+  display: block;
   text-align: center;
-  vertical-align: center;
 }
 .custom-button{
   background-color: #ddd;
   width: 100%;
-  height: 16px;
-  margin-bottom: 2px;
+  height: 24px;
+  margin-bottom: 6px;
   border: none;
   border-radius: 4px;
   text-align: center;
   vertical-align: center;
-  font-size: 12px;
+  font-size: 18px;
   cursor: pointer;
   user-select: none;
 }
